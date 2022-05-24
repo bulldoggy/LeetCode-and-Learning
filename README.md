@@ -1,2 +1,2 @@
-# LeetCode-and-Learning
+# LeetCode-and-Learn
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
