@@ -28,9 +28,9 @@ class Solution {
         traverseDFS(curr.right);
     }
     
-    public void swapChild(TreeNode curr) {
-        TreeNode temp = curr.left;
-        curr.left = curr.right;
-        curr.right = temp;
+    public void swapChild(TreeNode node) {
+        TreeNode temp = node.left;
+        node.left = node.right;
+        node.right = temp;
     }
 }
