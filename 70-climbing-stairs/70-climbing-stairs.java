@@ -1,18 +1,11 @@
 class Solution {
-    Map<Integer, Integer> map = new HashMap<>();
-        
     public int climbStairs(int n) {
-        if(n < 2) {
-            return 1;
+        int[] dp = new int[n + 1];
+        
+        dp[n] = dp[n-1] = 1;
+        for(int i = n - 2; i >= 0; i--) {
+            dp[i] = dp[i+1] + dp[i+2];
         }
-        
-        if(map.containsKey(n)) {
-            return map.get(n);
-        }
-        
-        int result = climbStairs(n-1) + climbStairs(n-2); 
-        map.put(n, result);
-        
-        return result;
+        return dp[0];
     }
 }
