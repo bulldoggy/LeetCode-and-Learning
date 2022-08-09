@@ -29,7 +29,6 @@ class Solution {
                 if(treenode.left != null) queue.add(treenode.left);
                 if(treenode.right != null) queue.add(treenode.right);
             }
-            System.out.println("sum: " + sum + ", queueSize: " + queueSize);
             result.add(sum/queueSize);
             sum = 0;
         }
