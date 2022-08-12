@@ -16,12 +16,10 @@ class Solution {
             if(start < 0) {
                 result[i] = nums[end] * nums[end];
                 end++;
-            } else
-            if(end > nums.length - 1) {
+            } else if(end > nums.length - 1) {
                 result[i] = nums[start] * nums[start];
                 start--;
-            } else
-            if(nums[end] <= nums[start]) {
+            } else if(nums[end] <= nums[start]) {
                 result[i] = nums[end] * nums[end];
                 end++;
             } else {
