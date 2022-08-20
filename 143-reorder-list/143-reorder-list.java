@@ -28,12 +28,8 @@ class Solution {
         
         ListNode secondhalf = slow;
         beforeSlow.next = null;
-        
-        printList(firsthalf, "firsthalf");
-        printList(secondhalf, "secondhalf");
-        
+
         secondhalf = reverseList(secondhalf); 
-        printList(secondhalf, "after reverseList()");        
         mergeList(firsthalf, secondhalf);
     }
     
@@ -63,15 +59,5 @@ class Solution {
             next = from.next;
         }
         from.next = to;
-    }
-    
-    private void printList(ListNode node, String s) {
-        System.out.println(s+": ");
-        ListNode temp = node;
-        while(temp != null) {
-            System.out.print(temp.val+", ");
-            temp = temp.next;
-        }
-        System.out.println();
     }
 }
