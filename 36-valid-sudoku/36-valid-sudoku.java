@@ -5,13 +5,11 @@ class Solution {
 
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
-                if(hsRow.contains(board[i][j])) System.out.println("Row: " + i + ", " + j + "> " + hsRow.contains(board[i][j]));
                 if(hsRow.contains(board[i][j])) return false;
                 if(board[i][j] != '.') hsRow.add(board[i][j]);
             }
             
             for(int j = 0; j < 9; j++) {
-                if(hsCol.contains(board[j][i])) System.out.println("Col: " + j + ", " + i + "> " + hsCol.contains(board[j][i]));
                 if(hsCol.contains(board[j][i])) return false;
                 if(board[j][i] != '.') hsCol.add(board[j][i]);
             }
@@ -32,7 +30,6 @@ class Solution {
         
         for(int i = row; i < row+3; i++) {
             for(int j = col; j < col+3; j++) {
-                if(hsGrid.contains(board[i][j])) System.out.println("Grid: " + i + ", " + j + "> " + hsGrid.contains(board[i][j]));
                 if(hsGrid.contains(board[i][j])) return false;
                 if(board[i][j] != '.') hsGrid.add(board[i][j]);
             }
