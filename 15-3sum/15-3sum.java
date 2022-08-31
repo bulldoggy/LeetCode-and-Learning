@@ -26,7 +26,9 @@ class Solution {
             } else if(nums[start] + nums[end] > sum) {
                 end--;
             } else {
-                if(!result.contains(Arrays.asList(nums[start], nums[end]))) result.add(new ArrayList<>(Arrays.asList(nums[start], nums[end])));
+                List<Integer> currRes = Arrays.asList(nums[start], nums[end]);
+                
+                if(!result.contains(currRes)) result.add(currRes);
                 start++;
                 end--;
             }
