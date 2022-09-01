@@ -12,7 +12,6 @@ class Solution {
         
         while(start <= end) {
             int mid = (start+end)/2;
-            System.out.println("start: "+start+", end: "+end+", mid: "+mid);
             int hoursNeeded = getHoursNeeded(piles, mid);
             
             if(hoursNeeded > h) {
@@ -31,7 +30,6 @@ class Solution {
         for(int i = 0; i < piles.length; i++) {
             result += piles[i] % speed == 0 ? piles[i] / speed : (piles[i] / speed) + 1;
         }
-        System.out.println("Speed: "+speed+", Hours: "+result);
         return result < 0 ? 1000000001 : result;
     }
 }
