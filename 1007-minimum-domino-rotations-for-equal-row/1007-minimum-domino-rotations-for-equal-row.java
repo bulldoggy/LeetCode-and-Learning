@@ -30,8 +30,7 @@ class Solution {
             }
             dots++;
         }
-        System.out.println(top.toString());
-        System.out.println(bottom.toString());
+
         if(maxNum == 0) return -1;
         
         if(topHasMore) {
