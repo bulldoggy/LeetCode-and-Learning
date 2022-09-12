@@ -3,7 +3,6 @@ class Solution {
         HashMap<Integer, Integer> top = new HashMap<>();
         HashMap<Integer, Integer> bottom = new HashMap<>();
         HashMap<Integer, Integer> extra = new HashMap<>();
-        int result = 0;
         
         for(int i = 1; i <= 6; i++) {
             top.put(i, 0);
@@ -34,15 +33,8 @@ class Solution {
         if(maxNum == 0) return -1;
         
         if(topHasMore) {
-            for(int i : tops) {
-                if(i != maxNum) result++;
-            }
-        } else {
-            for(int i : bottoms) {
-                if(i != maxNum) result++;
-            }
-        }
-        
-        return result;
+            return tops.length - top.get(maxNum) - extra.get(maxNum);
+        }        
+        return tops.length - bottom.get(maxNum) - extra.get(maxNum);
     }
 }
