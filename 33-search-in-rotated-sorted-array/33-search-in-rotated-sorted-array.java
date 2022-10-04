@@ -18,7 +18,7 @@ class Solution {
                     end = mid - 1;
                 }
             }
-            System.out.println(nums[edgePointer]);
+
             if(target < nums[0]) {
                 start = edgePointer+1;
                 end = nums.length-1;
@@ -29,8 +29,6 @@ class Solution {
         }
     
         while(start <= end) {
-            //System.out.println(nums[start]);
-            //System.out.println(nums[end]);
             int mid = (start + end) / 2;
             if(nums[mid] == target) {
                 return mid;
