@@ -5,7 +5,6 @@ class Solution {
         
         if(nums[start] <= nums[end]) return nums[0];
         while(start <= end) {
-            System.out.println("start:"+start+",end:"+end);
             int mid = (start+end)/2;
             if(mid > 0 && nums[mid] < nums[mid-1]) {
                 return nums[mid];
