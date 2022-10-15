@@ -1,18 +1,16 @@
 class Solution {
     public int jump(int[] nums) {
         int end = nums.length-1;
-        int furthest = nums.length-1;
-        int jumps = 0;
+        int currFurthest = end;
+        int jump = 0;
         
         while(end > 0) {
-            for(int i = nums.length-2; i >= 0; i--) {
-                if(i + nums[i] >= end && i < furthest) {
-                    furthest = i;
-                }
+            for(int i = end-1; i >= 0; i--) {
+                if(i + nums[i] >= end) currFurthest = i;
             }
-            end = furthest;
-            jumps++;
+            end = currFurthest;
+            jump++;
         }
-        return jumps;
+        return jump;
     }
 }
