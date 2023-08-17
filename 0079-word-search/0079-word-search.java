@@ -22,9 +22,7 @@ class Solution {
         
     }
     
-    private void find(Stack<Pair> stack, char[][] board, String word) {
-        //System.out.println(stack.peek().x + ", " + stack.peek().y + " || stacksize: " + stack.size() + ", wordlength: " + word.length());
-        
+    private void find(Stack<Pair> stack, char[][] board, String word) {        
         if(stack.size() == word.length()) {
             result = true;
             return;
