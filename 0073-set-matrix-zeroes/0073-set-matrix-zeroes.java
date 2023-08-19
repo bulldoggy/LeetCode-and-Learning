@@ -14,8 +14,6 @@ class Solution {
                 }
             }
         }
-        System.out.println("firstcol: " + firstCol);
-        //draw(matrix);
         
         for(int i = 1; i < matrix[0].length; i++) {
             if(matrix[0][i] == 0) {
@@ -45,14 +43,5 @@ class Solution {
                 matrix[i][0] = 0;
             }
         }            
-    }
-    
-    private void draw(int[][] matrix) {
-        for(int i = 0; i < matrix.length; i++) {
-            for(int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j] + "  ");
-            }
-            System.out.println();
-        }
     }
 }
