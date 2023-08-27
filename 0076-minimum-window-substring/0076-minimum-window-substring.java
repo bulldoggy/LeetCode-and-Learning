@@ -13,7 +13,6 @@ class Solution {
         }
         
         while(end+1 < s.length() || count <= 0) {
-            //System.out.println(hm.toString() + ", start: " + start + ", end: " + end + " | count= " + count + " || result= " + result.toString());
             if(count > 0) {
                 end++;
                 char cEnd = s.charAt(end);
