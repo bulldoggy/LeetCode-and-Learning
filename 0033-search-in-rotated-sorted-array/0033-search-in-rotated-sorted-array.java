@@ -23,7 +23,6 @@ class Solution {
                 start = mid + 1;
             }
         }
-        System.out.println("edge: " + edge);
         if(edge == nums.length-1 || target >= nums[0]) {
             start = 0;
             end = edge;
@@ -31,9 +30,7 @@ class Solution {
             start = edge + 1;
             end = nums.length - 1;
         }
-        
-        System.out.println(start + " | " + end);
-        
+                
         while(start <= end) {
             int mid = (start + end) / 2;
             
