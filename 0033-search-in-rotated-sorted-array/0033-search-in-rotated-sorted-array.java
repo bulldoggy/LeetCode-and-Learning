@@ -23,6 +23,7 @@ class Solution {
                 start = mid + 1;
             }
         }
+        
         if(edge == nums.length-1 || target >= nums[0]) {
             start = 0;
             end = edge;
