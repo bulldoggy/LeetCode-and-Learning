@@ -29,8 +29,6 @@ class Solution {
             if(end - start + 1 - maxFreq <= k && end - start + 1 > result) {
                 result = end - start + 1;
             }
-            
-            //System.out.println("len: " + (end - start + 1) + ", start: " + start + ", maxFreq: " + maxFreq);
         }
         
         return result;
