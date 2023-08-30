@@ -13,16 +13,8 @@ class Solution {
             int temp = max * num;
             max = Math.max(Math.max(max * num, min * num), num);
             min = Math.min(Math.min(temp, min * num), num);
-                System.out.println(max + " | " + min);
             result = Math.max(result, max);
-            
-        }
-        
+        } 
         return result;
     }
 }
-
-/*
--2 0 -1
--2 0 -1
-*/
