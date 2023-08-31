@@ -34,7 +34,6 @@ class Solution {
             if(count == 0) {
                 result.add(end - p.length());
             }          
-            System.out.println(end + ": " + hm.toString());
         }
         
         return result;
