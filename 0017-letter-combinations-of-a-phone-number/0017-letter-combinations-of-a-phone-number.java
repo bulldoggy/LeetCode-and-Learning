@@ -3,6 +3,10 @@ class Solution {
     List<String> result = new ArrayList<>();
     
     public List<String> letterCombinations(String digits) {
+        if(digits.isEmpty()) {
+            return result;    
+        }
+        
         hm.put(2, List.of("a", "b", "c"));
         hm.put(3, List.of("d", "e", "f"));
         hm.put(4, List.of("g", "h", "i"));
@@ -17,17 +21,17 @@ class Solution {
     }
     
     private void backtrack(int i, String digits, StringBuilder sb) {
-        if(i == digits.length() && sb.length() == digits.length() && sb.length() != 0) {
+        if(i == digits.length() && sb.length() != 0) {
             result.add(sb.toString());
         } else {
-            for(int j = i; j < digits.length(); j++) {
-                int num = Integer.valueOf(String.valueOf(digits.charAt(j)));
+            //for(int j = i; j < digits.length(); j++) {
+                int num = Integer.valueOf(String.valueOf(digits.charAt(i)));
                 for(String s : hm.get(num)) {
                     sb.append(s);
-                    backtrack(j + 1, digits, sb);
+                    backtrack(i + 1, digits, sb);
                     sb.deleteCharAt(sb.length() - 1);
                 }
-            }
+            //}
         }
     }
 }
