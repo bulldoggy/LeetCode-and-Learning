@@ -21,17 +21,15 @@ class Solution {
     }
     
     private void backtrack(int i, String digits, StringBuilder sb) {
-        if(i == digits.length() && sb.length() != 0) {
+        if(i == digits.length()) {
             result.add(sb.toString());
         } else {
-            //for(int j = i; j < digits.length(); j++) {
-                int num = Integer.valueOf(String.valueOf(digits.charAt(i)));
-                for(String s : hm.get(num)) {
-                    sb.append(s);
-                    backtrack(i + 1, digits, sb);
-                    sb.deleteCharAt(sb.length() - 1);
-                }
-            //}
+            int num = Integer.valueOf(String.valueOf(digits.charAt(i)));
+            for(String s : hm.get(num)) {
+                sb.append(s);
+                backtrack(i + 1, digits, sb);
+                sb.deleteCharAt(sb.length() - 1);
+            }
         }
     }
 }
