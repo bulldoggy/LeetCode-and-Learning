@@ -11,8 +11,7 @@ class MyStack {
     
     public int pop() {
         for(int i = 0; i < queue.size() - 1; i++) {
-            int val = queue.poll();
-            queue.offer(val);
+            queue.offer(queue.poll());
         }
         return queue.poll();
     }
