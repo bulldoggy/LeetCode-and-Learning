@@ -6,10 +6,10 @@ class Solution {
         for(int price : prices) {
             if(price < lowest) {
                 lowest = price;
-            }
-                
-            if(price - lowest > maxProfit) {
-                maxProfit = price - lowest;
+            } else {
+                if(price - lowest > maxProfit) {
+                    maxProfit = price - lowest;
+                }
             }
         }
         
