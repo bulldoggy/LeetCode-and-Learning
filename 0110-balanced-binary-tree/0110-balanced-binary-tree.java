@@ -19,7 +19,10 @@ class Solution {
             return true;
         }
         
-        return getHeight(root) != -1;        
+        if(getHeight(root) == -1) {
+            return false;
+        }
+        return true;
     }
     
     private int getHeight(TreeNode root) {
@@ -29,13 +32,10 @@ class Solution {
         
         int left = getHeight(root.left);
         int right = getHeight(root.right);
-    
-        if(left == -1 || right == -1) {
-            return -1;
-        } else if(Math.abs(left - right) > 1) {
+        
+        if(left == -1 || right == -1 || Math.abs(left - right) > 1) {
             return -1;
         }
-        
-        return Math.max(left, right) + 1;
+        return 1 + Math.max(left, right);
     }
 }
