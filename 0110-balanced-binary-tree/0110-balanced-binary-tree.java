@@ -32,9 +32,7 @@ class Solution {
     
         if(left == -1 || right == -1) {
             return -1;
-        }
-        
-        if(Math.abs(left - right) > 1) {
+        } else if(Math.abs(left - right) > 1) {
             return -1;
         }
         
