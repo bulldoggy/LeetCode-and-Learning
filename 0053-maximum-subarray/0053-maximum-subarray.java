@@ -9,10 +9,7 @@ class Solution {
             } else {
                 currSum = num;
             }
-            
-            if(currSum > maxSum) {
-                maxSum = currSum;
-            }
+            maxSum = Math.max(maxSum, currSum);
         }
         
         return maxSum;
