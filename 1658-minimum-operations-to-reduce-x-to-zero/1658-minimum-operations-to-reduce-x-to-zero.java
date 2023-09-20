@@ -29,9 +29,8 @@ class Solution {
                 second++;
                 windowSum += nums[second];
             }
-            //System.out.println(first + ", " + second);
+
             if(windowSum == remain) {
-                //System.out.println(first + ", in,  " + second);
                 res = Math.min(res, nums.length - (second + 1 - first));
             }
         }
