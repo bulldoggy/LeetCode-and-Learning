@@ -7,7 +7,7 @@ class Solution {
             }
             
             if(i < 3) {
-                mat = rotateMatrix(mat);
+                rotateMatrix(mat);
             }
         }
         
@@ -26,17 +26,25 @@ class Solution {
         return true;
     }
     
-    private int[][] rotateMatrix(int[][] mat) {
-        int[][] rotated = new int[mat.length][mat[0].length];
-        int right = mat[0].length - 1;
+    private void rotateMatrix(int[][] mat) {
         int top = 0;
+        int bottom = mat.length - 1;
         
-        for(int i = 0; i < mat.length; i++) {
-            for(int j = 0; j < mat[0].length; j++) {
-                rotated[top + j][right - i] = mat[i][j]; 
+        while(top < bottom) {
+            int left = top;
+            int right = bottom;
+            
+            for(int i = 0; i < bottom - top; i++) {
+                int topLeft = mat[top][left + i];
+                
+                mat[top][left + i] = mat[bottom - i][left];
+                mat[bottom - i][left] = mat[bottom][right - i];
+                mat[bottom][right - i] = mat[top + i][right];
+                mat[top + i][right] = topLeft;
             }
+            
+            top++;
+            bottom--;
         }
-        
-        return rotated;
     }
 }
