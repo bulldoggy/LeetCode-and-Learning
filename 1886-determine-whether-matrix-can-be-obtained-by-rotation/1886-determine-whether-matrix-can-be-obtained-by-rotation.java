@@ -6,7 +6,9 @@ class Solution {
                 return true;
             }
             
-            mat = rotateMatrix(mat);
+            if(i < 3) {
+                mat = rotateMatrix(mat);
+            }
         }
         
         return false;
