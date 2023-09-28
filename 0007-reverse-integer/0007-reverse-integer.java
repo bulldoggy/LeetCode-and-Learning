@@ -1,42 +1,30 @@
 class Solution {
     public int reverse(int x) {
         boolean isNegative = false;
-        Long tempX = Long.valueOf(x);
+        Long longVal = Long.valueOf(x);
+        Long reversedLongVal = 0L;
         
-        if(tempX < 0) {
+        if(longVal < 0) {
             isNegative = true;
-            tempX = -tempX;
+            longVal = -longVal;
         }
 
-        Long longVal = Long.valueOf(reverseString(String.valueOf(tempX)));
-        
-        if((isNegative && longVal > 2147483648L) || (!isNegative && longVal > 2147483647L)) {
-            return 0;   
-        } 
+        while(longVal > 0) {
+            reversedLongVal *= 10;
+            reversedLongVal += longVal % 10;
+            longVal /= 10;
+        }
         
         if(isNegative) {
-            return 0 - longVal.intValue();
-        }
-        return longVal.intValue();   
-    }
-    
-    private String reverseString(String s) {
-        int start = 0;
-        int end = s.length() - 1;
-        char[] arr = s.toCharArray();
+            if(reversedLongVal > 2147483648L) {
+                return 0;   
+            } 
+            return 0 - reversedLongVal.intValue();
+        } 
         
-        while(start < end) {
-            swop(arr, start, end);
-            start++;
-            end--;
+        if(reversedLongVal > 2147483647L) {
+            return 0;
         }
-        
-        return String.valueOf(arr);
-    }
-    
-    private void swop(char[] arr, int start, int end) {
-        char temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+        return reversedLongVal.intValue();   
     }
 }
