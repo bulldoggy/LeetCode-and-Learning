@@ -17,12 +17,9 @@ class Solution {
     ) {
         if(pos >= candidates.length) return;
 
-        System.out.println(list.toString() + ", pos: " + pos);       
-
         if(sum > target) return;
         
         if(sum == target) {
-            System.out.println("added " + list.toString());
             result.add(list);
             return;
         }
