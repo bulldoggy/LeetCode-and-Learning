@@ -1,20 +1,38 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
-        List<Integer> curr = new ArrayList<>();
-        findSum(0, curr, 0, result, candidates, target);
-        return result;        
+        
+        backtrack(result, new ArrayList<>(), candidates, target, 0, 0);
+        
+        return result;
     }
     
-    private void findSum(int i, List<Integer> curr, int sum, List<List<Integer>> result, int[] candidates, int target) {
+    private void backtrack(
+        List<List<Integer>> result, 
+        List<Integer> list, 
+        int[] candidates, 
+        int target, 
+        int pos,
+        int sum
+    ) {
+        if(pos >= candidates.length) return;
+
+        System.out.println(list.toString() + ", pos: " + pos);       
+
+        if(sum > target) return;
+        
         if(sum == target) {
-            result.add(new ArrayList<>(curr));
-        } else if(sum < target) {
-            for(int j = i; j < candidates.length; j++) {
-                curr.add(candidates[j]);
-                findSum(j, curr, sum + candidates[j], result, candidates, target);
-                curr.remove(curr.size() - 1);
-            }
+            System.out.println("added " + list.toString());
+            result.add(list);
+            return;
         }
+        
+        int curr = candidates[pos];  
+        List<Integer> chosen = new ArrayList<>(list);
+        chosen.add(curr);
+        List<Integer> notChosen = new ArrayList<>(list);
+        
+        backtrack(result, chosen, candidates, target, pos, sum + curr);
+        backtrack(result, notChosen, candidates, target, pos + 1, sum);
     }
 }
